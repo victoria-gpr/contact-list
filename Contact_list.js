@@ -1,30 +1,24 @@
-/*Ajusta las funciones de crear y eliminar un contacto para que puedan almacenar la siguiente información como objetos:
-id
-nombres
-apellidos
-teléfono
-ubicaciones
-ciudad
-dirección */
+//Ajusta las funciones de crear y eliminar un contacto para que puedan almacenar la siguiente información como objetos:
 
-function agregarContacto (contacto) {
-  contactos.push(contacto)
+let contactos = [];
+
+function agregarContacto(contacto) {
+  contacto.id = prompt("Ingresar ID del contacto");
+  contacto.nombres = prompt("Ingresar nombres del contacto");
+  contacto.apellidos = prompt("Ingresar apellidos del contacto");
+  contacto.telefono = prompt("Ingresar número de teléfono del contacto");
+  contacto.ubicaciones = prompt("Ingresar ubicaciones del contacto");
+  contacto.ciudad = prompt("Ingresar ciudad del contacto");
+  contacto.direccion = prompt("Ingresar dirección del contacto");
+  contactos.push(contacto);
 }
 
-function eliminarContacto(contacto){
-  contactos = contactos.filter(nombre => contacto !== nombre)
+function eliminarContacto(contacto) {
+  contactos = contactos.filter((nombre) => contacto !== nombre);
 }
 
-function imprimirContactos(contactos){
-  console.log(contactos)
-}
+agregarContacto(contacto);
+imprimirContactos;
 
-let contactos = ["Ana López", "Daniel Vega", "Héctor Rojas", "Mariana Díaz"]
-let contacto = prompt("Ingresar nombres del contacto nuevo: ")
-
-agregarContacto(contacto)
-
-contacto = prompt("Ingresar nombre del contacto a eliminar: ")
-eliminarContacto(contacto)
-
-imprimirContactos(contactos)
+contacto = prompt("Ingresar nombre del contacto a eliminar: ");
+eliminarContacto(contacto);

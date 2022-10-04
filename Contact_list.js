@@ -20,6 +20,24 @@ function eliminarContacto(contacto) {
   contactos = contactos.filter((nombre) => contacto !== nombre);
 }
 
+function actualizarContacto() {
+  const contacto = {};
+
+  contacto.id = prompt("Ingresa el ID del contacto a actualizar");
+  contacto.nombres = prompt("Actualizar nombres del contacto");
+  contacto.apellidos = prompt("Actualizar apellidos del contacto");
+  contacto.telefono = prompt("Actualizar número de teléfono del contacto");
+  contacto.ubicaciones = {};
+  contacto.ubicaciones.ciudad = prompt("Actualizar ciudad del contacto");
+  contacto.ubicaciones.direccion = prompt("Actualizar dirección del contacto");
+
+  for (let index = 0; index < contactos.length; index++) {
+    if (contacto.id === contactos[index].id) {
+      contactos[index] = contacto;
+    }
+  }
+}
+
 agregarContacto();
 imprimirContactos();
 
